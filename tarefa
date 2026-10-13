@@ -1,0 +1,144 @@
+
+#include <stdio.h>
+
+int main() {
+    float c,m; 
+    float s=0;
+    int i;
+    //c = consumo,m = media,s = soma//
+    printf("calculador de consumo de gasto medio de agua por m3\n");
+    printf("insira os valores de consumo de cada morador\n");
+    for (i = 1; i <= 5; i++) {
+        printf("Digite o consumo do morador %d (em m3)\n", i);
+        scanf("%f", &c);
+
+        s+=c;
+
+        if (c<= 20) {
+            printf("Consumo dentro da media.\n");
+        } else {
+            printf("Consumo acima da media.\n");
+        }
+    }
+
+    m=s/5;
+
+    printf("Consumo medio geral: %.2f m3\n",m);
+
+    return 0;
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+#include <stdio.h>
+
+int main() {
+    int opcao;
+    float saldo = 0;
+
+    do {
+        printf("=== COFRINHO DIGITAL ===\n");
+        printf("1 - Adicionar R$ 0,50\n");
+        printf("2 - Adicionar R$ 1,00\n");
+        printf("3 - Adicionar R$ 2,00\n");
+        printf("4 - Parar\n");
+        printf("Escolha uma opcao\n");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                saldo += 0.50;
+                break;
+
+            case 2:
+                saldo += 1.00;
+                break;
+
+            case 3:
+                saldo += 2.00;
+                break;
+
+            case 4:
+                printf("Encerrando o cofrinho...\n");
+                break;
+
+            default:
+                printf("Opcao invalida!\n");
+        }
+           if ((opcao>=1)&&(opcao<=3)) {
+            printf("Moeda adicionada!\n");
+            printf("Novo saldo: R$ %.2f\n", saldo);
+        }
+
+    } while (opcao!=4);
+
+    printf("Total acumulado: R$ %.2f\n", saldo);
+
+    return 0;
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+#include <stdio.h>
+
+int main() {
+    int i;
+    float n, s = 0, m;
+
+    // n = nota, s = soma, m = media//
+
+    printf("Digite as notas dos clientes, de 0 a 10.\n");
+
+    for (i = 1; i <= 10; i++) {
+        printf("Digite a nota do cliente %d: ", i);
+        scanf("%f", &n);
+
+        if (n < 0 || n > 10) {
+            printf("Nota invalida!\n");
+            return 0;
+        } else {
+            s += n;
+        }
+    }
+
+    m = s / 10;
+
+    printf("Media geral: %.2f\n", m);
+
+    if (m < 7) {
+        printf("ALERTA: A media de atendimento esta abaixo de 7!\n");
+    } else {
+        printf("A media de atendimento esta dentro do esperado.\n");
+    }
+
+    return 0;
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#include <stdio.h>
+
+int main() {
+    int h = 0, p, s = 0, m;
+
+    // h = horas, p = passos, s = soma dos passos, m = media
+
+    printf("=== MARCADOR DE PASSOS DIARIOS ===\n");
+    printf("Este programa registra os passos dados a cada hora.\n");
+    printf("A meta diaria eh atingir pelo menos 10000 passos.\n");
+    printf("Ao final, sera informado o total, as horas e a media por hora.\n");
+
+    while (s < 10000) {
+        h++;
+
+        printf("Digite os passos da hora %d: ", h);
+        scanf("%d", &p);
+
+        s = s + p;
+    }
+
+    m = s / h;
+
+    printf("Meta atingida!\n");
+    printf("Total de passos: %d\n", s);
+    printf("Horas necessarias: %d\n", h);
+    printf("Media de passos por hora: %d\n", m);
+
+    return 0;
+}
